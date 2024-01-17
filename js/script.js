@@ -138,7 +138,7 @@ list.innerHTML = items;
 const bikes = [
     {
         name : 'Bianchi',
-        weight : 100
+        weight : 700
     },
     {
         name : 'Colnago',
@@ -163,11 +163,20 @@ const bikes = [
 
 ];
 
+//assegno primo peso alla variabile lessWeight
+let lessWeight = bikes[0].weight;
 
-let lessWeight = bikes[0];
-console.log(lessWeight);
+// scorro il vettore trovo il peso minore
+bikes.forEach((bike) => {
+    if (bike.weight < lessWeight) {
+        lessWeight = bike.weight;
+    }
+});
 
+//prendo l'ogetto con il peso minore e lo restituisco 
+const results = bikes.filter(({weight}) => weight === lessWeight);
 
+console.log(results);
 
 
 
@@ -240,8 +249,8 @@ const getRandomNumber = ((min, max) => {
     team.points = getRandomNumber(0,100);
     team.fauls = getRandomNumber(0, 1000);
   });
-
+//creo array con il numero dei falli 
 const teamsFouls = teams.map(({ fauls }) => ({ fauls }));
 
-
+//stampo in console i falli 
 console.log(teamsFouls);
