@@ -126,5 +126,122 @@ const items = plates.reduce((result, plate) => {
     return result + `<li>${plate}</li>`
 }, '');
 
-console.log(items);
+
 list.innerHTML = items;
+
+
+
+
+
+// snack 3 
+
+const bikes = [
+    {
+        name : 'Bianchi',
+        weight : 100
+    },
+    {
+        name : 'Colnago',
+        weight : 150
+    },
+    {
+        name : 'Pinarello',
+        weight : 400
+    },
+    {
+        name : 'Wilier',
+        weight : 800
+    },
+    {
+        name : 'Daccordi',
+        weight : 250
+    },
+    {
+        name : 'Cinelli',
+        weight : 340
+    },
+
+];
+
+
+let lessWeight = bikes[0];
+console.log(lessWeight);
+
+
+
+
+
+
+
+
+// snack 4
+
+
+const teams = [
+    {
+        name: 'Roma',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Juve',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Torino',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Milan',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Inter',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Lazio',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Napoli',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Atalanta',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Fiorentina',
+        points: 0,
+        fauls: 0
+    },
+    {
+        name: 'Sassuolo',
+        points: 0,
+        fauls: 0
+    },
+
+];
+
+//funzione numeri casuali 
+const getRandomNumber = ((min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  });
+// Genero numeri casuali per points e fauls
+  teams.forEach(team => {
+    team.points = getRandomNumber(0,100);
+    team.fauls = getRandomNumber(0, 1000);
+  });
+
+const teamsFouls = teams.map(({ fauls }) => ({ fauls }));
+
+
+console.log(teamsFouls);
