@@ -16,24 +16,12 @@ const guests = [
 ];
 
 
-const guestList = [];
-let guestobject = {};
 
 
-const list = guests.forEach((guest , i) => {
-    
 
-   
-    guestobject += 
-  `
-        tableName : ${tableName},
-        name : ${guest},
-        place : ${i}
-  `;
 
-  guestList.push(guestobject);
+const guestList = guests.map((guest, i) => ({table : tableName, name: guest , place: i + 1}));
 
-});
 
 console.log(guestList);
 
@@ -95,10 +83,9 @@ const students120 = totalStudents.filter(({grades , id}) => grades > 70 && id > 
 
 console.log(students120);
 
-const studentsUpper = totalStudents.filter(student => {
-    const studente = student.name;
-    return studente.toUpperCase();
-});
 
 
-console.log(studentsUpper);
+// nomi con la letterra maiuscola
+const plates = totalStudents.map(({name}) => name.toUpperCase());
+
+console.log(plates);
