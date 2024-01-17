@@ -32,6 +32,7 @@ console.log(guestList);
 
 //snack 2 
 
+const list = document.getElementById('list');
 
 //creo la lista degli studenti 
 const totalStudents = [
@@ -89,3 +90,41 @@ console.log(students120);
 const plates = totalStudents.map(({name}) => name.toUpperCase());
 
 console.log(plates);
+
+// TODO: stampo in pagina 
+/*
+let items = '';
+
+
+
+for(let plate of plates){
+    items += `<li>${plate}</li>`;
+}
+
+
+plates.forEach(plate => {
+    items += `<li>${plate}</li>`;
+})
+
+list.innerHTML = items;*/
+
+
+// !! METODO REDUCE 
+/*
+const numbers = [1, 3, 5, 6, 7];
+
+
+const somma = numbers.reduce((result, number) => {
+    return result + number;
+}, 0);
+
+console.log(somma);*/
+
+
+
+const items = plates.reduce((result, plate) => {
+    return result + `<li>${plate}</li>`
+}, '');
+
+console.log(items);
+list.innerHTML = items;
